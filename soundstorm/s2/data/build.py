@@ -5,7 +5,6 @@ from soundstorm.s2.utils.misc import instantiate_from_config
 from torch.utils.data import ConcatDataset
 
 
-
 def build_dataloader(config, args=None, return_dataset=False):
     dataset_cfg = config['dataloader']
     batch_size = 1
@@ -65,7 +64,7 @@ def build_dataloader(config, args=None, return_dataset=False):
     dev_loader = torch.utils.data.DataLoader(
         dev_dataset,
         batch_size=batch_size,
-        #(dev_sampler is None),
+        # (dev_sampler is None),
         shuffle=False,
         num_workers=num_workers,
         sampler=dev_sampler,
